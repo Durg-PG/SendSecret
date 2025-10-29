@@ -18,8 +18,8 @@ export const authOptions: NextAuthOptions = {
                 try {
                     const user = await UserModel.findOne({
                         $or: [ // making it  future proof to identify using multiple field
-                            { email: credentials.indenfier },
-                            { username: credentials.indenfier }
+                            { email: credentials.identifier },
+                            { username: credentials.identifier }
                         ]
                     })
                     if (!user) {
